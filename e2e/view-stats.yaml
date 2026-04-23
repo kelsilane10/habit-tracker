@@ -1,0 +1,7 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- assertVisible: "My Habits"
+- tapOn: "Stats"
+- assertVisible: "Stats"
+- assertVisible: "day streak"

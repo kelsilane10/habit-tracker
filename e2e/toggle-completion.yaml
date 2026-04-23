@@ -1,0 +1,9 @@
+# Prerequisite: run add-habit.yaml first, or ensure "Morning Run" habit exists.
+appId: host.exp.Exponent
+---
+- launchApp
+- assertVisible: "Morning Run"
+- tapOn: "Morning Run"
+- assertVisible: "✓"
+- tapOn: "Morning Run"
+- assertNotVisible: "✓"

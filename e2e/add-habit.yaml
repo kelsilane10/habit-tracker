@@ -1,0 +1,11 @@
+appId: host.exp.Exponent
+---
+- launchApp
+- assertVisible: "My Habits"
+- tapOn: "+ Add"
+- assertVisible: "New Habit"
+- tapOn:
+    text: "e.g. Morning run"
+- inputText: "Morning Run"
+- tapOn: "Create Habit"
+- assertVisible: "Morning Run"
