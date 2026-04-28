@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { Habit } from '../types';
 import { getStreakCount } from '../store/habitStore';
@@ -15,7 +15,9 @@ export default function HabitCard({ habit }: Props) {
   const streak = getStreakCount(completions, habit.id);
 
   async function handlePress() {
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    if (Platform.OS !== 'web') {
+      await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    }
     toggleCompletion(habit.id);
   }
 
